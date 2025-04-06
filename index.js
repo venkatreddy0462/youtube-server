@@ -9,12 +9,19 @@ const app = express();
 app.use(cors());
 const upload = multer({ dest: 'uploads/' });
 
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 // OAuth2 Setup
 const oauth2Client = new google.auth.OAuth2(
-  'YOUR_CLIENT_ID',
-  'YOUR_CLIENT_SECRET',
-  'https://yourserver.com/oauth2callback'
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  'https://your-render-domain.onrender.com/oauth2callback'
 );
+
 
 // Step 1: Send user to Google for auth
 app.get('/auth', (req, res) => {
