@@ -23,6 +23,13 @@ const oauth2Client = new google.auth.OAuth2(
 );
 
 
+// Attach to YouTube API
+const youtube = google.youtube({
+  version: 'v3',
+  auth: oauth2Client,
+});
+
+
 // Step 1: Send user to Google for auth
 app.get('/auth', (req, res) => {
   const authUrl = oauth2Client.generateAuthUrl({
