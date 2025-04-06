@@ -19,7 +19,7 @@ app.listen(PORT, () => {
 const oauth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
-  'https://your-render-domain.onrender.com/oauth2callback'
+  'https://youtube-server-1kb0.onrender.com/oauth2callback'
 );
 
 
