@@ -35,7 +35,7 @@ async function uploadVideo() {
         },
       },
       media: {
-        body: fs.createReadStream('video.mp4'), // Replace with your video file name
+        body: fs.createReadStream(req.file.path), // Replace with your video file name
       },
     });
 
