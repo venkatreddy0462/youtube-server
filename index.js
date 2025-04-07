@@ -25,8 +25,8 @@ async function uploadVideo() {
       part: 'snippet,status',
       requestBody: {
         snippet: {
-          title: 'Automated Upload Test',
-          description: 'This video was uploaded automatically using a refresh token.',
+          title: req.body.title,
+          description: req.body.description,
           tags: ['auto', 'youtube', 'api'],
           categoryId: '22', // People & Blogs
         },
